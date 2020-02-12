@@ -9,7 +9,6 @@ from boto.s3.key import Key
 from werkzeug.utils import secure_filename
 from skimage import io
 from skimage.transform import resize
-from config import ACCESS_KEY, SECRET_KEY,BUCKET_NAME
 
 # Dependenciees for all models
 from tensorflow.keras.preprocessing import image
@@ -37,9 +36,9 @@ from tensorflow.keras.applications.resnet50 import (
 # Initialize the app
 app = Flask(__name__)
 
-# Connect to S3 Bucket
-bucket_name = BUCKET_NAME 
-# app.secret_key = '213lkj' #Not sure if this is needed
+ACCESS_KEY =  'AKIAI6WDSHM3RS4ZBBRA'
+SECRET_KEY = '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'
+BUCKET_NAME = 'rumlimages' 
 
 s3 = boto3.client(
    "s3",
@@ -143,8 +142,9 @@ def upload():
         if file:
             filename = secure_filename(file.filename)
             filename = 'test.jpg'
+            file.save(filename)
             s3.upload_file(
-                Bucket = bucket_name,
+                Bucket = BUCKET_NAME,
                 Filename = filename,
                 Key = filename,
                 ExtraArgs={'ACL':'public-read'}
