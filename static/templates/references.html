@@ -1,0 +1,182 @@
+{% extends 'template.html' %}
+
+{%block head_scripts%}
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="shortcut icon" href="#" />
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" id="section_desc">
+            <div class="box main">
+                <div class="heading">
+                    <h1>
+                        <span class="white thin"> JavaScript Libraries Used in this Project</span>
+                    </h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="card-columns">
+                <div class="card mx-auto">
+                    <img class="card-img-top" src="https://avatars3.githubusercontent.com/u/1562726?s=400&v=4"
+                        alt="D3 image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">D3</h5>
+                        <p class="card-text">D3.js is a JavaScript library for manipulating documents based on data. D3
+                            helps you bring data to life
+                            using HTML, SVG, and CSS. D3’s emphasis on web standards gives you the full capabilities of
+                            modern browsers without tying
+                            yourself to a proprietary framework, combining powerful visualization components and a
+                            data-driven
+                            approach to DOM manipulation.</p>
+                        <a href="https://d3js.org/" target="_blank" class="btn btn-primary">D3</a>
+                    </div>
+                </div>
+
+                <div class="card mx-auto">
+                    <img class="card-img-top" src="https://www.drupal.org/files/project-images/bootstrap-stack.png"
+                        alt="Bootstrap image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Bootstrap</h5>
+                        <p class="card-text">Build responsive, mobile-first projects on the web with the world’s most
+                            popular front-end component library.
+                            Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype
+                            your ideas or build your entire app
+                            with our Sass variables and mixins, responsive grid system, extensive prebuilt components,
+                            and powerful plugins built on jQuery.</p>
+                        <a href="https://getbootstrap.com/docs/4.4/getting-started/introduction/" target="_blank"
+                            class="btn btn-primary">Bootstrap</a>
+                    </div>
+                </div>
+
+                <div class="card mx-auto">
+                    <img class="card-img-top"
+                        src="https://financesonline.com/uploads/2019/08/Google-Chart-Tools-logo1.png"
+                        alt="Google Charts image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Google Charts</h5>
+                        <p class="card-text">Google chart tools are powerful, simple to use, and free. Try out our rich
+                            gallery of interactive charts and data tools.</p>
+                        <a href="https://developers.google.com/chart" target="_blank" class="btn btn-primary">Google
+                            Charts</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div  id="padding"> </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" id="section_desc">
+            <div class="box main">
+                <div class="heading">
+                    <h1>
+                        <span class="white thin"> Python Libraries Used in this Project</span>
+                    </h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="card-columns">
+                <div class="card mx-auto">
+                    <img class="card-img-top" src="https://pandas.pydata.org/_static/pandas_logo.png"
+                        alt="Pandas image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Pandas</h5>
+                        <p class="card-text">Pandas is an open source, BSD-licensed library providing high-performance,
+                            easy-to-use data structures and data analysis tools for the Python programming language.</p>
+                        <a href="https://pandas.pydata.org//" target="_blank" class="btn btn-primary">Pandas</a>
+                    </div>
+                </div>
+
+                <div class="card mx-auto">
+                    <img class="card-img-top" src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"
+                        alt="Scikit-learn image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Scikit-learn</h5>
+                        <p class="card-text">Simple and efficient tools for predictive data analysis. Accessible to everybody, and reusable in various contexts. Built on NumPy, SciPy, and matplotlib. Open source, commercially usable - BSD license</p>
+                        <a href="https://scikit-learn.org/stable/" target="_blank" class="btn btn-primary">Scikit-learn</a>
+                    </div>
+                </div>
+
+                <div class="card mx-auto">
+                    <img class="card-img-top" src="https://matplotlib.org/_static/logo2_compressed.svg"
+                        alt="Matplotlib image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Matplotlib</h5>
+                        <p class="card-text">Matplotlib is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms. Matplotlib can be used in Python scripts, the Python and IPython shells, the Jupyter notebook, web application servers, and four graphical user interface toolkits.</p>
+                        <a href="https://matplotlib.org/#" target="_blank"
+                            class="btn btn-primary">Matplotlib</a>
+                    </div>
+                </div>
+
+                <div class="card mx-auto">
+                    <img class="card-img-top" src="http://flask.palletsprojects.com/en/1.1.x/_images/flask-logo.png"
+                        alt="Flask image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Flask</h5>
+                        <p class="card-text">Flask is a web framework. This means flask provides you with tools,
+                            libraries and technologies that allow you to build a web application.
+                            This web application can be some web pages, a blog, a wiki or go as big as a web-based
+                            calendar application or a commercial website.</p>
+                        <a href="http://flask.palletsprojects.com/en/1.1.x/" target="_blank"
+                            class="btn btn-primary">Flask</a>
+                    </div>
+                </div>
+
+                <div class="card mx-auto">
+                    <img class="card-img-top" src="https://numpy.org/_static/numpy_logo.png"
+                        alt="Numpy image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Numpy</h5>
+                        <p class="card-text">NumPy is the fundamental package for scientific computing with Python. It contains among other things: a powerful N-dimensional array object, sophisticated (broadcasting) functions, tools for integrating C/C++ and Fortran code, useful linear algebra, Fourier transform, and random number capabilities.</p>
+                        <a href="https://numpy.org" target="_blank" class="btn btn-primary">Numpy</a>
+                    </div>
+                </div>
+
+                <div class="card mx-auto">
+                    <img class="card-img-top" src="https://www.gstatic.com/devrel-devsite/prod/v172e5dffd78b32f4b12f8112b00e940d4993af48229fac5346097b33edb0f543/tensorflow/images/lockup.svg"
+                        alt="Tensorflow image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Tensorflow</h5>
+                        <p class="card-text">TensorFlow is an end-to-end open source platform for machine learning. It has a comprehensive, flexible ecosystem of tools, libraries and community resources that lets researchers push the state-of-the-art in ML and developers easily build and deploy ML powered applications.</p>
+                        <a href="https://www.tensorflow.org" target="_blank" class="btn btn-primary">Tensorflow</a>
+                    </div>
+                </div>
+
+                <div class="card mx-auto">
+                    <img class="card-img-top" src="https://opencv.org/wp-content/uploads/2019/02/opencv-logo-1.png"
+                        alt="OpenCV image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">OpenCV </h5>
+                        <p class="card-text">OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products. Being a BSD-licensed product, OpenCV makes it easy for businesses to utilize and modify the code. </p>
+                        <a href="https://opencv.org" target="_blank" class="btn btn-primary">OpenCV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="padding2"> </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+{% endblock %}}
+{% block body_scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+{% endblock %}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv=“Pragma” content=”no-cache”>
+    <meta http-equiv=“Expires” content=”-1″>
+    <meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block title %}{% endblock %}
+    {% block head_scripts %}{% endblock %}
+
+    <link rel="apple-touch-icon" sizes="57x57" href="{{url_for('static',filename='favicon/apple-icon-57x57.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{url_for('static',filename='favicon/apple-icon-60x60.png')}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{url_for('static',filename='favicon/apple-icon-72x72.png')}}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{url_for('static',filename='favicon/apple-icon-76x76.png')}}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{url_for('static',filename='favicon/apple-icon-114x114.png')}}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{url_for('static',filename='favicon/apple-icon-120x120.png')}}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{url_for('static',filename='favicon/apple-icon-144x144.png')}}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{url_for('static',filename='favicon/apple-icon-152x152.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static',filename='favicon/apple-icon-180x180.png')}}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{url_for('static',filename='favicon/android-icon-192x192.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static',filename='favicon/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{url_for('static',filename='favicon/favicon-96x96.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static',filename='favicon/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{url_for('static',filename='favicon/manifest.json')}}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{url_for('static',filename='favicon/ms-icon-144x144.png')}}">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+</head>
+{% block breadcrumbs %} {% endblock %}
+<body>
+    
+    <div class="jumbotron container-fluid"
+        style="background: url('/static/css/neuron.jpg') no-repeat center center;  background-size: cover; padding-bottom: 5px; padding-top: 50px; margin-bottom:0">
+        <h1 class="display-4" style="color: lightgrey;">Convolutional Neural Network Predictor</h1>
+        <p class="lead" style="color: lightgrey;">This app will predict the contents of your image using the
+            Convolutional-Neural-Network models:
+            VGG16, VGG19, and RESNET50.</p>
+        <hr class="my-4">
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="padding-top: 0 ;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href='\'>Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="\models">Documentation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/cemoga/machine_learning-challenge" target="blank">Git Repository</a>
+                </li>
+                <li class = "nav-item">
+                    <a class = "nav-link" href="\references"> Library References</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {% block body %} {% endblock %}
+    {% block content %}{% endblock %}
+    <!-- Footer -->
+    <footer class="page-footer font-small primary-color-dark" style="background-color:rgb(0, 36, 68); color: lightgray;">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://github.com/cemoga/machine_learning-challenge" target="blank"> Rutgers Bootcamp Project Group</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+    {% block scripts %}{% endblock %}
+    {% block body_scripts %}{% endblock %}
+</body>
+
+</html>

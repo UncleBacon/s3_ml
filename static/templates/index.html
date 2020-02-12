@@ -1,0 +1,30 @@
+{% extends "template.html" %}
+
+{% block title %}
+<title>CNN-Uploader</title>
+{% endblock %}
+
+{% block head_scripts %}
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="shortcut icon" href="{{url_for('static',filename='image/favicon.ico')}}" type="image/x-icon">
+{% endblock %}
+
+{% block content %}
+<div class="container" style="padding-top: 50px ;">
+    <h1>Image Uploader</h1>
+    <p>Please choose an image to compute a prediction based on 3 Convolutional-Neural-Network Models</p>
+    <hr>
+    <div class="row" style="padding: 20px;">
+        <div class="col-sm-12" style="text-align: left;">
+            <form id="upload-form" , action="{{url_for('upload') }}" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*" multiple>
+                <input type="submit" value="send">
+            </form>
+        </div>
+    </div>
+    <hr>
+</div>
+{% endblock %}
+

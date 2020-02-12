@@ -1,0 +1,53 @@
+{% extends "template.html" %}
+
+{% block title %}
+<title>CNN-Models</title>
+{% endblock %}
+
+{% block content %}
+<div class = 'container'>
+    <div class = 'vgg'style="padding-top: 15px;">
+        <H2>VGG16 & VGG19</H2>
+        <div class = 'image'style = 'text-align: center'>
+            <a href = 'https://www.pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/' alt ='VGG Architecture'> <img src = 'https://www.pyimagesearch.com/wp-content/uploads/2017/03/imagenet_vgg16.png' alt = 'VGG16 Architecture'></a>
+        </div>
+       <p>VGG nerual network architecture is a sequential convolutional neural network model proposed by K. Simonyan and A. Zisserman from the University of Oxford in the paper 
+           <a href = 'https://arxiv.org/abs/1409.1556'>Very Deep Convolutional Networks for Large-Scale Image Recognition</a>. The model achieves 92.7% top-5 test accuracy in ImageNet, which is a dataset 
+           of over 14 million images belonging to 1000 classes. VGG16 was trained for weeks and was using NVIDIA Titan Black GPU’s.</p>
+
+        <p>This network is characterized by its simplicity, using only 3×3 convolutional layers stacked on top of each other in increasing depth. 
+            Reducing volume size is handled by max pooling. Two fully-connected layers, each with 4,096 nodes are then followed by a softmax classifier.
+            The 16 and 19 refer to the number of weight layers present in the model. Due to their depth both models come in over 550MB.</p>
+            
+         
+        <div class = 'sources' >
+            <p>Sources:<p>
+            <a style = 'display:block' href ='https://neurohive.io/en/popular-networks/vgg16/'>https://neurohive.io/en/popular-networks/vgg16/</a> 
+            <a style = 'display:block' href = 'https://www.pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/'>https://www.pyimagesearch.com/2017/03/20/imagenet-
+                vggnet-resnet-inception-xception-keras/</a>
+        
+            <p><a class="btn btn-primary"href = 'https://machinelearningmastery.com/use-pre-trained-vgg-model-classify-objects-photographs/' role = 'button'>Click here </a> For details on how to 
+                use the pre-trained model to classify objects</p>
+        </div>
+            
+    </div>
+    <hr>
+    <div class='ResNet'>
+        <h2>ResNet50</h2>
+        <div class = 'image'style = 'text-align: center'>
+            <a href = 'https://www.pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/' ><img src = 'https://www.pyimagesearch.com/wp-content/uploads/2017/03/imagenet_resnet_residual.png' alt= 'Resnet Architecture'style = 'text-align: center'></a>
+        </div>
+        <p>ResNet-50 is a convolutional neural network introduced by He et al. in their 2015 paper, <a href ='https://arxiv.org/abs/1512.03385'>Deep Residual Learning for Image Recognition</a> 
+            and is trained on more than a million images from the ImageNet database. The network is 50 
+            layers deep and can classify images into 1000 object categories, such as keyboard, mouse, pencil, and many animals. As a result, the network 
+            has learned rich feature representations for a wide range of images. The network has an image input size of 224-by-224.</p>
+        <p>Unlike sequential models Resenet relies on micro-architecture models to build its network. A network of these micro-architecture building blocks alogn with standard layers
+            build the Macro-architecture(the final network). ALthough more than twice as deep as the VGG networks the size of this model is significantly less at only 102MB.
+        </p>
+        <p>Source: <a href = 'https://www.mathworks.com/help/deeplearning/ref/resnet50.html'>https://www.mathworks.com/help/deeplearning/ref/resnet50.html</a></p>
+    </div>
+</div>
+
+
+{% endblock %}
+
