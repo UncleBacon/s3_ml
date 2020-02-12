@@ -36,9 +36,9 @@ from tensorflow.keras.applications.resnet50 import (
 # Initialize the app
 app = Flask(__name__)
 
-ACCESS_KEY =  'AKIAI6WDSHM3RS4ZBBRA'
-SECRET_KEY = '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'
-BUCKET_NAME = 'rumlimages' 
+ACCESS_KEY =  'XXXX'
+SECRET_KEY = 'XXXXX'
+BUCKET_NAME = 'XXXX' 
 
 s3 = boto3.client(
    "s3",
