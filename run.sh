@@ -1,0 +1,1 @@
+FLASK_APP=S3_ML/app.py flask run

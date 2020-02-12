@@ -1,5 +1,5 @@
-.footer{
-  position:fixed;
+footer{
+  position: fixed;
   overflow: hidden;
   bottom: 0px;
   /* height: 100px; */

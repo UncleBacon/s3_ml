@@ -14,8 +14,6 @@ from config import ACCESS_KEY, SECRET_KEY,BUCKET_NAME
 # Dependenciees for all models
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.models import Model
-import numpy as np
-
 
 # Dependencies for VGG16
 from tensorflow.keras.applications.vgg16 import (
