@@ -48,7 +48,69 @@ s3 = boto3.client(
 )
 bucket_resource = s3
 
-# APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+json_answer = []
+def vgg16(image):
+        # For Model VGG16
+        model = VGG16()
+        # Preprocess for the model VGG16
+        x_vgg16 = preprocess_input_vgg16(image)
+        # Prediction for the Model VGG16
+        prediction_vgg16 = model.predict(x_vgg16)
+        # Decoded Prediction for Model VGG16
+        decoded_prediction_vgg16 = decode_predictions_vgg16(prediction_vgg16, top=3)
+        model_vgg16_resp = []
+        for i in range(0,3):
+            json = {}
+            json["Model"] = 'VGG16'
+            json["no"] = i+1
+            json["prediction"] = decoded_prediction_vgg16[0][i][1],
+            json["probability"] = "{:.2%}".format(decoded_prediction_vgg16[0][i][2])
+            model_vgg16_resp.append(json)
+        json_answer.append(model_vgg16_resp)
+        
+def vgg19(image):
+    # For Model VGG19
+    model = VGG19()
+    # Preprocess for the model VGG19
+    x_vgg19 = preprocess_input_vgg19(image)
+    # Prediction for the Model VGG19
+    prediction_vgg19 = model.predict(x_vgg19)
+    # Decoded Prediction for Model VGG19
+    decoded_prediction_vgg19 = decode_predictions_vgg19(prediction_vgg19, top=3)
+    model_vgg19_resp = []
+    for i in range(0,3):
+        json = {}
+        json["Model"] = 'VGG19'
+        json["no"] = i+1
+        json["prediction"] = decoded_prediction_vgg19[0][i][1],
+        json["probability"] = "{:.2%}".format(decoded_prediction_vgg19[0][i][2])
+        model_vgg19_resp.append(json)
+    json_answer.append(model_vgg19_resp)       
+
+def resnet50(image):
+    # For Model RESNET50
+    model = ResNet50()
+    # Preprocess for the model RESNET50
+    x_restnet50 = preprocess_input_resnet50(image)
+    # Prediction for the Model RESNET50
+    prediction_resnet50 = model.predict(x_restnet50)
+    # Decoded Prediction for Model RESNET50
+    decoded_prediction_resnet50 = decode_predictions_resnet50(prediction_resnet50, top=3)
+    model_resnet50 = []
+    for i in range(0,3):
+        json = {}
+        json["Model"] = 'RESNET50'
+        json["no"] = i+1
+        json["prediction"] = decoded_prediction_resnet50[0][i][1],
+        json["probability"] = "{:.2%}".format(decoded_prediction_resnet50[0][i][2])
+        model_resnet50.append(json)
+    json_answer.append(model_resnet50)
+
+def run_models(image):
+    vgg16(image)
+    vgg19(image)
+    resnet50(image)
+
 
 @app.after_request
 def add_header(r):
@@ -99,63 +161,9 @@ def predict_image():
     x = resize(x, (224,224))
     # Reshape the image according to the model input requierements
     x = x.reshape((1, x.shape[0], x.shape[1], x.shape[2]))
-
-    # For Model VGG16
-    model = VGG16()
-    # Preprocess for the model VGG16
-    x_vgg16 = preprocess_input_vgg16(x)
-    # Prediction for the Model VGG16
-    prediction_vgg16 = model.predict(x_vgg16)
-    # Decoded Prediction for Model VGG16
-    decoded_prediction_vgg16 = decode_predictions_vgg16(prediction_vgg16, top=3)
-
-    # For Model VGG19
-    model = VGG19()
-    # Preprocess for the model VGG19
-    x_vgg19 = preprocess_input_vgg19(x)
-    # Prediction for the Model VGG19
-    prediction_vgg19 = model.predict(x_vgg19)
-    # Decoded Prediction for Model VGG19
-    decoded_prediction_vgg19 = decode_predictions_vgg19(prediction_vgg19, top=3)
-
-    # For Model RESNET50
-    model = ResNet50()
-    # Preprocess for the model RESNET50
-    x_restnet50 = preprocess_input_resnet50(x)
-    # Prediction for the Model RESNET50
-    prediction_resnet50 = model.predict(x_restnet50)
-    # Decoded Prediction for Model RESNET50
-    decoded_prediction_resnet50 = decode_predictions_resnet50(prediction_resnet50, top=3)
-
-    json_answer = []
-
-    model_vgg16_resp = []
-    for i in range(0,3):
-        json = {}
-        json["Model"] = 'VGG16'
-        json["no"] = i+1
-        json["prediction"] = decoded_prediction_vgg16[0][i][1],
-        json["probability"] = "{:.2%}".format(decoded_prediction_vgg16[0][i][2])
-        model_vgg16_resp.append(json)
-    json_answer.append(model_vgg16_resp)
-    model_vgg19_resp = []
-    for i in range(0,3):
-        json = {}
-        json["Model"] = 'VGG19'
-        json["no"] = i+1
-        json["prediction"] = decoded_prediction_vgg19[0][i][1],
-        json["probability"] = "{:.2%}".format(decoded_prediction_vgg19[0][i][2])
-        model_vgg19_resp.append(json)
-    json_answer.append(model_vgg19_resp)
-    model_resnet50 = []
-    for i in range(0,3):
-        json = {}
-        json["Model"] = 'RESNET50'
-        json["no"] = i+1
-        json["prediction"] = decoded_prediction_resnet50[0][i][1],
-        json["probability"] = "{:.2%}".format(decoded_prediction_resnet50[0][i][2])
-        model_resnet50.append(json)
-    json_answer.append(model_resnet50)
+    
+    # Run model functions 
+    run_models(x)
 
     return jsonify(json_answer)
 
