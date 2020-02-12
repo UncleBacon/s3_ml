@@ -143,7 +143,6 @@ def upload():
         if file:
             filename = secure_filename(file.filename)
             filename = 'test.jpg'
-            file.save(filename)
             s3.upload_file(
                 Bucket = bucket_name,
                 Filename = filename,
