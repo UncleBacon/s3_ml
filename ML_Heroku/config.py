@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-ACCESS_KEY =  'AKIAJVNTGYW4EFDRDLRQ'
-SECRET_KEY = 'm2fOGdYx7nwOIKoHUnlUe0OwZP8mZuTRTORlHHKn'
-BUCKET_NAME = 'rumlimages'
-S3_LOCATION = 'http://{}.s3.amazonaws.com/'.format('BUCKET_NAME')
-=======
-ACCESS_KEY =  'YOUR ACCESS_KEY'
-SECRET_KEY = 'YOUR SECRET KEY'
-S3_LOCATION = 'http://{}.s3.amazonaws.com/'.format('BUCKET_NAME')
+ACCESS_KEY =  'YOUR ACCESS KEY'
+SECRET_KEY = 'YOUR SECURITY KEY'
 BUCKET_NAME = 'YOUR BUCKET NAME'
->>>>>>> 2dd5456a0e6e65b065928a162d08d9637724359a
+S3_LOCATION = 'http://{}.s3.amazonaws.com/'.format('BUCKET_NAME')
